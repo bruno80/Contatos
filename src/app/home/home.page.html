@@ -11,13 +11,16 @@
     Lista de Contatos
   </ion-list-header>
   <ion-list>
-    <ion-item>
+    <ion-item *ngFor="let contato of contatos">
       <ion-avatar slot="start">
         <img src="{{contato.url}}" alt="">
       </ion-avatar>
       <ion-label>
         {{contato.nome}}
       </ion-label>
+      <ion-button (click)="delete(contato)">
+        <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+      </ion-button>
     </ion-item>
   </ion-list>
 </ion-content>
